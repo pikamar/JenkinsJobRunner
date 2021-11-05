@@ -1,0 +1,16 @@
+jenkins:
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+        - "Overall/Administer:authenticated"
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+      - id: jenkins-admin
+        password: Rhs65J9!ldssk9$!
+
+  crumbIssuer: "standard"
+
+  remotingSecurity:
+    enabled: true  

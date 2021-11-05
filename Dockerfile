@@ -27,3 +27,10 @@ USER jenkins
 #COPY ansible.yaml /tmp/ansible.yaml
 
 #RUN ansible-galaxy collection install -r /tmp/ansible.yaml
+
+ENV CASC_JENKINS_CONFIG /var/jenkins_home/jcasc_configs
+RUN mkdir /var/jenkins_home/jcasc_configs
+#COPY ./jcasc_configs /var/jenkins_home/jcasc_configs/
+
+# Skip wizard
+ENV JAVA_OPTS "-Djenkins.install.runSetupWizard=false ${JAVA_OPTS:-}"
