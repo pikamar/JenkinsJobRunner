@@ -3,7 +3,7 @@ job('Seed Job') {
         git {
             remote {
                 name('Remote Pipeline')
-                url("${REMOTE_DSL}")
+                url("${param.REMOTE_DSL}")
             }
         }
     }
