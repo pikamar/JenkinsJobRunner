@@ -1,3 +1,7 @@
+pipelineJob('External Jenkins Job Loader') {
+    definition {
+        cps {
+            script('''
 properties([
     buildDiscarder(
         logRotator(
@@ -25,7 +29,7 @@ pipeline {
     }
 
     stages {
-        stage('Pipeline build') {
+        stage('Download DSL and run') {
             steps {
                 script {
                     //def app = load "env.groovy"
@@ -43,6 +47,11 @@ pipeline {
                     ])
                 }
             }
+        }
+    }
+}
+            ''')
+            sandbox()
         }
     }
 }
