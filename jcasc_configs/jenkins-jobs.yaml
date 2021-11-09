@@ -1,22 +1,6 @@
 jobs:
   - url: ${PIPELINE_URL:-https://raw.githubusercontent.com/pikamar/JenkinsJobRunner/main/job-dsl-collection/pipeline.dsl}
  # - file: /var/jenkins_home/jcasc_configs/pipeline.groovy
-<<<<<<< HEAD
  # - script: >
  #     job('Seed Job')
-=======
-  - script: >
-      job('Seed Job') {
-        scm {
-            git {
-                remote {
-                    name('Remote Pipeline')
-                    url("${param.REMOTE_DSL}")
-                }
-            }
-        }
-    }
-    job.parameters {
-        stringParam('REMOTE_DSL', "https://raw.githubusercontent.com/pikamar/JenkinsJobRunner/main/job-dsl-collection/pipeline.dsl" ,'Remote DSL script')
-    }
->>>>>>> 37980c78ca70f378a301a150436499112f58753c
+
